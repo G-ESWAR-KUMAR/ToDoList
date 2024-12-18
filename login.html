@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <style>
+    /* General styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(https://marketplace.canva.com/EAFLJ6ypN58/1/0/1600w/canva-black-and-white-minimal-impactful-motivational-quote-desktop-wallpaper-TJA1N366rXo.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: rgb(153, 255, 0);
+    }
+
+    /* Login box styling */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .login-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: rgb(153, 255, 0);
+    }
+
+    .login-box .input-group {
+      margin-bottom: 15px;
+    }
+
+    .login-box label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1rem;
+      background-color: #f4f4f4;
+    }
+
+    .login-box button {
+      width: 420px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: rgb(153, 255, 0);
+      color: black;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: rgb(102, 204, 0);
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/index.html"><img height="50px" src="logo.png" alt="Logo"></a>
+    </div>
+    <div><b class="quote" style="color: rgb(255, 85, 0);">IF YOU WANT TO SHINE LIKE THE SUN, FIRST YOU HAVE TO BURN LIKE IT.</b></div>
+    <!-- Links -->
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a style="color: blueviolet;" href="/login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Login box -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="email">Email ID</label>
+          <input type="text" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="button" onclick="validateLogin()">Login</button>
+        <p class="error" id="error-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Simple client-side validation
+      if (email === 'admin' && password === 'admin') {
+        // Redirect to another page
+        window.location.href = '/admin.html'; // Replace with your target page
+      } else {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = 'Invalid username or password!';
+      }
+    }
+  </script>
+</body>
+</html>

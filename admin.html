@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <style>
+    /* General styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url(https://marketplace.canva.com/EAFFa4KUNAE/1/0/1600w/canva-black-brown-geometric-motivational-desktop-wallpaper-5foRQZGaO7g.jpg);
+      background-repeat: no-repeat;
+      padding-bottom: 40px;
+      /* To ensure table isn't hidden */
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      justify-content: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: rgb(153, 255, 0);
+    }
+
+    /* Table styling */
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    .status-box {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .status-box.tick {
+      background-color: green;
+    }
+
+    .status-box.cross {
+      background-color: red;
+    }
+
+    .done {
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .not-done {
+      background-color: #f44336;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo"><a href="/index.html"><img height="50px" src="logo.png" alt="Logo"></a></div>
+    <div><b class="quote" style="color: rgb(255, 85, 0);">IF YOU WANT TO SHINE LIKE THE SUN, FIRST YOU HAVE TO BURN LIKE
+        IT.</b></div>
+
+    <!-- Links -->
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/index.html">Logout</a></li>
+      <li><a style="color: blueviolet;" href="">Admin</a></li>
+    </ul>
+  </nav>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>To-Do List Activities</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Waking UP</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Exercise</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Tiffen</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Clock In</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Study or Teach</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Break</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Lunch</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Study or Teach</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Break</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Clock OUT</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>break</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Work</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+      <tr>
+        <td id="currentDate"></td>
+        <td>Dinner</td>
+        <td>
+          <span class="status-box tick" onclick="updateStatus(this, 'Done')"></span>
+          <span class="status-box cross" onclick="updateStatus(this, 'Not Done')"></span>
+          <span class="status" data-status="Not Done"></span>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <script>
+    // Set today's date in the "Date" column
+    document.getElementById('currentDate').innerText = new Date().toLocaleDateString();
+
+    // Check if there's any saved status data in localStorage
+    function loadSavedStatus() {
+      const savedData = localStorage.getItem('statusData');
+      const lastUpdated = localStorage.getItem('lastUpdated');
+      const currentDate = new Date().toLocaleDateString();
+
+      // If the saved data's date is not the same as today, reset it
+      if (savedData && lastUpdated !== currentDate) {
+        localStorage.removeItem('statusData');
+        localStorage.removeItem('lastUpdated');
+      }
+
+      // If saved data exists, apply the saved statuses and visibility states
+      if (savedData) {
+        const statusData = JSON.parse(savedData);
+        statusData.forEach((item, index) => {
+          const statusElement = document.querySelectorAll('.status')[index];
+          const tickBox = statusElement.parentNode.querySelector('.tick');
+          const crossBox = statusElement.parentNode.querySelector('.cross');
+
+          // Update status text and class
+          statusElement.textContent = item.status;
+          if (item.status === 'Done') {
+            statusElement.classList.add('done');
+            statusElement.classList.remove('not-done');
+          } else {
+            statusElement.classList.add('not-done');
+            statusElement.classList.remove('done');
+          }
+
+          // Hide the tick and cross boxes after updating status
+          if (item.status !== 'Not Done') {
+            tickBox.style.display = 'none';
+            crossBox.style.display = 'none';
+          }
+        });
+      }
+    }
+
+    // Function to update status and hide the status boxes
+    function updateStatus(element, status) {
+      const statusBox = element;
+      const statusSpan = statusBox.parentNode.querySelector('.status');
+      const tickBox = statusBox.parentNode.querySelector('.tick');
+      const crossBox = statusBox.parentNode.querySelector('.cross');
+
+      // Set status text and style based on the selection
+      if (status === 'Done') {
+        statusSpan.textContent = 'Done';
+        statusSpan.classList.add('done');
+        statusSpan.classList.remove('not-done');
+      } else if (status === 'Not Done') {
+        statusSpan.textContent = 'Not Done';
+        statusSpan.classList.add('not-done');
+        statusSpan.classList.remove('done');
+      }
+
+      // Hide the status boxes after updating the status
+      tickBox.style.display = 'none';
+      crossBox.style.display = 'none';
+
+      // Save status to localStorage
+      saveStatus();
+    }
+
+    // Save the current status data to localStorage
+    function saveStatus() {
+      const statusData = [];
+      const statuses = document.querySelectorAll('.status');
+      statuses.forEach((status, index) => {
+        const taskStatus = status.textContent === 'Done' ? 'Done' : 'Not Done';
+        const tickBox = status.parentNode.querySelector('.tick');
+        const crossBox = status.parentNode.querySelector('.cross');
+
+        // Store the status and visibility of tick/cross boxes
+        statusData.push({
+          status: taskStatus,
+          tickVisible: tickBox.style.display !== 'none',
+          crossVisible: crossBox.style.display !== 'none'
+        });
+      });
+
+      // Store the status data and the last updated date
+      localStorage.setItem('statusData', JSON.stringify(statusData));
+      localStorage.setItem('lastUpdated', new Date().toLocaleDateString());
+    }
+
+    // Load saved status data on page load
+    window.onload = loadSavedStatus;
+  </script>
+</body>
+
+</html>
